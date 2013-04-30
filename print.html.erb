@@ -15,7 +15,7 @@
       }
       img.logo {
         display:block;
-        margin: 0 auto;
+        float:left;
       }
       h1 {
         font-size:1.8em;
@@ -84,6 +84,7 @@
   </head>
   <body>
     <img src="https://cdn.shopify.com/s/files/1/0160/1302/t/2/assets/mono_logo.png" class="logo" />
+<span>THE OPEN COMPANY<BR>theopencompany.net<br>San Francisco, USA</span>
     <h1>Order for <%= order.shipping_address['name'] %></h1>
     <h2 class="order_number">Number <%= order.order_number %></h2>
     <ul class="line_items">
