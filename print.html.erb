@@ -84,15 +84,17 @@
       .companyinfo {
 	float:right;
 	padding-left:10px;
-	font-size:12pt;
+	font-size:18pt;
 	margin-bottom:30px;
 	}
 	
     </style>
   </head>
   <body>
+<div style="display:block; width:100%;">
     <img src="https://cdn.shopify.com/s/files/1/0160/1302/t/2/assets/mono_logo.png" class="logo" />
 <div class="companyinfo">THE OPEN COMPANY<BR>theopencompany.net<br>San Francisco, USA</div>
+</div>
 
     <h1>Order for <%= order.shipping_address['name'] %></h1>
     <h2 class="order_number">Number <%= order.order_number %></h2>
