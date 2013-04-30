@@ -21,6 +21,9 @@
         font-size:1.8em;
         text-align:center;
         margin-bottom:0.1em;
+        padding-top:0.8em;
+
+
       }
 
       .order_number {
@@ -83,21 +86,21 @@
 
       .companyinfo {
 	float:right;
-	padding-left:10px;
-	font-size:18pt;
-	margin-bottom:30px;
+	padding:0px 20px 0px 0px;
+	font-size:17pt;
+
 	}
 	
     </style>
   </head>
   <body>
-<div style="display:block; width:100%;">
+<div style="display:block; width:100%; height:80px;">
     <img src="https://cdn.shopify.com/s/files/1/0160/1302/t/2/assets/mono_logo.png" class="logo" />
 <div class="companyinfo">THE OPEN COMPANY<BR>theopencompany.net<br>San Francisco, USA</div>
 </div>
 
-    <h1>Order for <%= order.shipping_address['name'] %></h1>
-    <h2 class="order_number">Number <%= order.order_number %></h2>
+    <h1>Shipment for <%= order.shipping_address['name'] %></h1>
+    <h2 class="order_number">Order Number <%= order.order_number %></h2>
     <ul class="line_items">
       <% order.line_items.each_with_index do |line_item, i| %>
         <li<%= ' class="first"' if i == 0 %>>
@@ -132,6 +135,7 @@
         <p><%= order.full_shipping_address %></p>
       </div>
     </div>
-    <p class="help">help@flexiscale.co</p>
+    <p class="help">Questions? @theopencompany on Twitter</p>
   </body>
 </html>
+
