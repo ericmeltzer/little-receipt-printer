@@ -17,6 +17,19 @@
         display:block;
         float:left;
       }
+      div.shipmentfor {
+        background-image: url('https://cdn.shopify.com/s/files/1/0160/1302/t/2/assets/shipmentfor.png');
+        background-repeat:no-repeat;
+        width:314px;
+         height:151px;
+         margin:0 auto;
+         padding:30px 5px 30px 5px;
+
+
+
+
+}
+
       h1 {
         font-size:1.8em;
         text-align:center;
@@ -94,13 +107,13 @@
     </style>
   </head>
   <body>
-<div style="display:block; width:100%; height:80px;">
+<div style="display:block; width:100%; height:80px; margin-bottom:35px;">
     <img src="https://cdn.shopify.com/s/files/1/0160/1302/t/2/assets/mono_logo.png" class="logo" />
 <div class="companyinfo">THE OPEN COMPANY<BR>theopencompany.net<br>San Francisco, USA</div>
 </div>
-
-    <h1>Shipment for <%= order.shipping_address['name'] %></h1>
-    <h2 class="order_number">Order Number <%= order.order_number %></h2>
+    <div class="shipmentfor">
+    <h1><%= order.shipping_address['name'] %></h1>
+</div>
     <ul class="line_items">
       <% order.line_items.each_with_index do |line_item, i| %>
         <li<%= ' class="first"' if i == 0 %>>
@@ -115,26 +128,21 @@
     <table class="tax">
       <tr>
         <td class="title">Total</td>
-        <td>£<%= order.total_price %></td>
+        <td>$<%= order.total_price %></td>
       </tr>
       <% order.tax_lines.each do |tax_line| %>
         <tr>
           <td class="title"><%= tax_line['title'] %></td>
-          <td>£<%= tax_line['price'] %></td>
+          <td>$<%= tax_line['price'] %></td>
         </tr>
       <% end %>
-      <tr>
-        <td class="title">VAT No.</td>
-        <td>100000</td>
-      </tr>
     </table>
     <div class="order_details_box">
-      <img src="https://chart.googleapis.com/chart?chs=150x150&cht=qr&chl=http%3A%2F%2Fbackoffice.flexiscale.co%2Forder%2F<%= order.id %>">
       <div class="order_details">
         <h2>Shipping to:</h2>
         <p><%= order.full_shipping_address %></p>
       </div>
-    </div>
+    </div> 
     <p class="help">Questions? @theopencompany on Twitter</p>
   </body>
 </html>
