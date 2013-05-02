@@ -74,6 +74,11 @@
         background-repeat:no-repeat;
         background-position:15px center;
       }
+
+      .line_items p#nobox {
+        padding-left:60px;
+      }
+
       
       .line_items .sku {
         font-size:0.8em;
@@ -135,7 +140,7 @@
         </li>
       <% end %>
    <li>
-    <p>
+    <p id="nobox">
     <span class="name">Order Total</span>
             <span style="float:right; padding-right:15px;"><%= order.total_price %></span>
 
